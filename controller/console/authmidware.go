@@ -26,7 +26,7 @@ import (
 // LoginCheck checks login or not.
 func LoginCheck(c *gin.Context) {
 	session := util.GetSession(c)
-	if 0 == session.UID {
+	if 0 == session.UID || session.UName != "erikluo" {
 		result := util.NewResult()
 		result.Code = util.CodeAuthErr
 		result.Msg = "unauthenticated request"
